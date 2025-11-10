@@ -1,0 +1,59 @@
+# Airline Management System
+
+## Overview
+A desktop application for managing airline bookings using Java Swing and MySQL. Features include:
+- User dashboard (Home screen)
+- Add customer details
+- Book flights
+- Cancel bookings
+- Generate boarding passes
+- View flight/journey details
+
+## Technologies Used
+- **Frontend**: Java Swing (UI), NetBeans IDE
+- **Backend**: MySQL Database
+- **Other**: JDBC for DB connectivity
+
+## Prerequisites
+- Java 8+ (JDK)
+- NetBeans IDE
+- MySQL Server (e.g., XAMPP/WAMP)
+- Database: `airlinemanagementsystem` with tables `reservation`, `cancel`, etc.
+
+## Setup Instructions
+1. Clone/Download the project.
+2. Open in NetBeans: File → Open Project.
+3. Set up DB: Import SQL scripts (create tables like `reservation`, `cancel`).
+4. Update `Conn.java` with your DB credentials (URL, username, password).
+5. Run: Right-click project → Run (F6).
+
+## How to Use
+1. Launch: Run `Home.java` (main entry point).
+2. Login/Dashboard: Select role (Admin/Passenger).
+3. Features:
+   - **Book Flight**: Enter details → Save to DB.
+   - **Cancel Booking**: Enter PNR → Move to `cancel` table.
+   - **Boarding Pass**: Enter PNR → Generate ticket preview/print.
+4. Test Data: Use sample PNRs from your DB.
+
+## Database Schema
+- `reservation`: PNR (PK), name, nationality, src, des, flightname, flightcode, ddate
+- `cancel`: PNR (PK), name, cancelno, fcode, date
+
+## Screenshots
+[Add images: Home Dashboard, Booking Form, Boarding Pass]
+
+## Known Issues/Limitations
+- SQL injection risk (use PreparedStatements for production).
+- No user authentication (add login system next?).
+
+## Future Enhancements
+- Email boarding passes (JavaMail API).
+- Admin reports (JasperReports).
+- Mobile app version (Android/JavaFX).
+
+## Author
+[ Dipshri ] | [dipshripatil73@gmail.com] | [1/9/25]
+
+## License
+MIT License (or whatever fits).
